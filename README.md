@@ -1,30 +1,104 @@
-# React + TypeScript + Vite
+# Setup de pré-commit 🔄️
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<ul>
+  <li> Boilerplate para React/TypeScript, construído em cima do Vite ⚡️</li>
+  <li> Garante que as regras estão seguindo seguidas.</li>
+</ul>
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# O que há no padrão 
 
-## Expanding the ESLint configuration
+<ul>
+  <li>
+    <a href='https://vitejs.dev/' target="_blank">Vite</a>
+  </li>
+  <li>
+    <a href='https://react.dev/' target="_blank">React</a>
+  </li>
+  <li>
+    <a href='https://www.typescriptlang.org/'>Typescript</a>
+  </li>
+  
+  <li>Dev Tools</li>
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+  <ul>
+  <li>
+    <a href='https://eslint.org/'>Eslint</a>
+  </li>
+  <li>
+    <a href='https://prettier.io/'>Prettier</a>
+  </li>
+  <li>
+    <a href='https://commitlint.js.org/#/'>CommitLint</a>
+  </li>
+  <li>
+    <a href='https://typicode.github.io/husky/#/'>Husky</a>
+  </li>
+  <li>
+    <a href='https://github.com/lint-staged/lint-staged'>Lint-Staged</a>
+  </li>
+    
+  </ul>
 
-- Configure the top-level `parserOptions` property like this:
+</ul>
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+# Install
+
+
+Instalando via comando CLI .
+
+Você pode clonar o projeto usando o terminal em sua máquina usando o seguinte comando:
+
+  ```
+   git clone: https://github.com/RodrigoHenrique07/Setup-Pre-Commit-Husky.git
+  
+  ```
+
+então, para iniciar o projeto:
+
+  ``` 
+    npm install
+    npm run dev
+
+  ```
+
+Observe se o arquivo pre-commit na raiz da pasta husky está com a configuração abaixo ou se esta com 'npm test'. Caso esteja com a segunda opção copie e cole essa configuração:
+
+
+```
+  echo 'Check for linting errors...'
+   npx lint-staged || 
+  (echo 'Linting errors or tests failed. Please fix them before commiting.' && exit 1)
+  
+  echo 'Done'
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+#Commitando
+
+A mensagem de commit segue o padrão convencional do commitLint que deve seguir:
+
+``` 
+git commit -m 'chore: setup de pre-commit utilizando husky'
+```
+
+``` 
+git commit -m 'fix: corrigindo bug'
+```
+
+``` 
+build
+chore
+ci
+docs
+feat
+fix
+perf
+refactor
+revert
+style
+test
+```
+
+
+
+
